@@ -1,23 +1,20 @@
 package br.senai.sp.jandira.retrofit_api_livraria2
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
-import br.senai.sp.jandira.retrofit_api_livraria2.R.id.txtTitulo
 import com.google.gson.JsonObject
 
-class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+class CadastroLivro : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.cadastro_livro)
 
         //Declarando e recuperando os objetos de view
-        val txtTitulo = findViewById<EditText>(txtTitulo)
+        val txtTitulo = findViewById<EditText>(R.id.txtTitulo)
         val txtPreco = findViewById<EditText>(R.id.txtPreco)
         val txtCategoria = findViewById<EditText>(R.id.txtCategoria)
         val txtDescricao = findViewById<EditText>(R.id.txtLivroDescricao)
@@ -40,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
             }
 
-//            Log.e("BODY-JSON", body.toString())
+            Log.e("BODY-JSON", body.toString())
 
             val intent = Intent(
                 this,CadastroLivroImagem::class.java
